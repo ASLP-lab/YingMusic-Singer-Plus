@@ -1,0 +1,110 @@
+hydra:
+  run:
+    dir: ckpts/${model.name}_${model.mel_spec.mel_spec_type}_${model.tokenizer}_${datasets.name}/${now:%Y-%m-%d}/${now:%H-%M-%S}
+
+runname: YingMusic_Singer
+
+datasets:
+  name: svs_infer
+  batch_size_per_gpu: 6
+  batch_size_type: sample
+  max_samples: null
+  num_workers: 4
+
+datasets_cfg:
+  filelist_path: /path/to/your/filelist
+  vae_frame_rate: 21.533203125
+  text_num_embeds: 373
+  lrc_align_mode: sentence_level
+
+optim:
+  epochs: null
+  num_updates: 31518
+  learning_rate: 7e-6
+  num_warmup_updates: 60
+  grad_accumulation_steps: 1
+  max_grad_norm: 1.0
+  bnb_optimizer: False
+  max_iter: null
+
+model:
+  name: YingMusic_Singer
+  tokenizer: null
+  tokenizer_path: null
+  is_tts_pretrain: 0
+  melody_input_source: some_pretrain_fuzzdisturb
+  cka_disabled: 0
+  backbone: DiT
+  f0_fn_type: null
+  f0_fn_path: null
+
+  arch:
+    dim: 1024
+    depth: 22
+    heads: 16
+    ff_mult: 2
+    text_dim: 512
+    text_mask_padding: False
+    qk_norm: null
+    conv_layers: 4
+    pe_attn_head: null
+    attn_backend: torch
+    attn_mask_enabled: False
+    checkpoint_activations: False
+    guidance_scale_embed_dim: null
+
+  mel_spec:
+    n_mel_channels: 64
+    mel_spec_type: vae
+
+  vocoder:
+    is_local: True
+    local_path: null
+
+  midi_extractor:
+    path: ckpts/model_ckpt_steps_100000_simplified.ckpt
+
+extra_parameters:
+  some_pretrain_fuzzdisturb:
+    dim: 128
+    drop_type: equal_space
+    drop_prob: [1, 9]
+    noise_scale: 0.0
+    blur_kernel: 0
+
+grpo:
+  noise_level: 0.8
+  num_samples: 8
+  upper_clip_epsilon: 0.02
+  lower_clip_epsilon: 0.002
+  beta: 1
+  ppo_epochs: 1
+  num_steps: 32
+  sde_window_range: [1, 16]
+  sde_window_size: 2
+  delet_temp: 10
+  use_cfg_sample: false
+  wer_SDI_weights: [1, 1, 1]
+  reward_config: {"qwen_asr_wer": 0.25, "f0_correlation": 0.25, "qwenfeat": 0.25, "sim_wavlm_large": 0.25}
+  grpo_wanted_loss: ["qwen_asr_wer_reward", "f0_correlation_reward", "qwenfeat_reward", "sim_wavlm_large_reward"]
+  use_guidance_scale_embed: false
+  t_shift: 0.5
+  cfg_strength: null
+  GDPO_batch_norm: false
+  use_egrpo: false
+  egrpo_tau: null
+  egrpo_d: null
+  use_max_group_std_dev: false
+
+ema_kwargs:
+  beta: 0.995
+  update_after_step: 100
+  update_every: 1
+
+ckpts:
+  logger: tensorboard
+  log_samples: False
+  save_per_updates: 100
+  keep_last_n_checkpoints: -1
+  last_per_updates: 100
+  save_dir: ckpts/${model.name}_${model.mel_spec.mel_spec_type}_${model.tokenizer}_${datasets.name}_CKA
