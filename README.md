@@ -1,19 +1,3 @@
----
-title: YingMusic-Singer
-emoji: 🎤
-colorFrom: pink
-colorTo: blue
-sdk: gradio
-python_version: "3.10"
-app_file: app.py
-tags:
-  - singing-voice-synthesis
-  - lyric-editing
-  - diffusion-model
-  - reinforcement-learning
-short_description: Edit lyrics, keep the melody
-fullWidth: true
----
 
 <div align="center">
 
