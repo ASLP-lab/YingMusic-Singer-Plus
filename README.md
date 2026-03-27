@@ -3,6 +3,8 @@
 
 <h1>🎤 YingMusic-Singer: Controllable Singing Voice Synthesis with Flexible Lyric Manipulation and Annotation-free Melody Guidance</h1>
 
+<img src="assets/model_logo.gif" width="61.8%">
+
 <p>
   <a href="">English</a> ｜ <a href="README_ZH.md">中文</a>
 </p>
