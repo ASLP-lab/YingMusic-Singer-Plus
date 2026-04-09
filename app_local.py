@@ -35,7 +35,7 @@ download_files(task="infer")
 
 print("🔄 Loading YingMusicSinger model...")
 from src.YingMusicSinger.infer.YingMusicSinger import YingMusicSinger
-_model = YingMusicSinger.from_pretrained("ASLP-lab/YingMusic-Singer")
+_model = YingMusicSinger.from_pretrained("ASLP-lab/YingMusic-Singer-Plus")
 _model = local_move2gpu(_model)
 _model.eval()
 print("✅ YingMusicSinger model loaded.")
@@ -418,20 +418,20 @@ b[data-melody] {
 HEADER_HTML = """
 <div id="app-header" align="center">
   <h1>
-    🎤 YingMusic-Singer: Controllable Singing Voice Synthesis with Flexible Lyric Manipulation and Annotation-free Melody Guidance
+    🎤 YingMusic-Singer-Plus: Controllable Singing Voice Synthesis with Flexible Lyric Manipulation and Annotation-free Melody Guidance
   </h1>
 
   <div class="badges" style="margin: 10px 0;">
         <img src="https://img.shields.io/badge/Python-3.10-3776AB?logo=python&logoColor=white" alt="Python">
         <img src="https://img.shields.io/badge/License-CC--BY--4.0-lightgrey" alt="License">
         <a href="https://arxiv.org/abs/2603.24589"><img src="https://img.shields.io/badge/arXiv-2603.24589-b31b1b?logo=arxiv&logoColor=white" alt="arXiv Paper"></a>
-        <a href="https://github.com/ASLP-lab/YingMusic-Singer"><img src="https://img.shields.io/badge/GitHub-YingMusic--Singer-181717?logo=github&logoColor=white" alt="GitHub"></a>
-        <a href="https://aslp-lab.github.io/YingMusic-Singer-Demo/"><img src="https://img.shields.io/badge/GitHub-Demo--Page-8A2BE2?logo=github&logoColor=white&labelColor=181717" alt="Demo Page"></a>
-        <a href="https://huggingface.co/spaces/ASLP-lab/YingMusic-Singer"><img src="https://img.shields.io/badge/🤗%20HuggingFace-Space-FFD21E" alt="HuggingFace Space"></a>
-        <a href="https://huggingface.co/ASLP-lab/YingMusic-Singer"><img src="https://img.shields.io/badge/🤗%20HuggingFace-Model-FF9D00" alt="HuggingFace Model"></a>
+        <a href="https://github.com/ASLP-lab/YingMusic-Singer-Plus"><img src="https://img.shields.io/badge/GitHub-YingMusic--Singer-181717?logo=github&logoColor=white" alt="GitHub"></a>
+        <a href="https://aslp-lab.github.io/YingMusic-Singer-Plus-Demo/"><img src="https://img.shields.io/badge/GitHub-Demo--Page-8A2BE2?logo=github&logoColor=white&labelColor=181717" alt="Demo Page"></a>
+        <a href="https://huggingface.co/spaces/ASLP-lab/YingMusic-Singer-Plus"><img src="https://img.shields.io/badge/🤗%20HuggingFace-Space-FFD21E" alt="HuggingFace Space"></a>
+        <a href="https://huggingface.co/ASLP-lab/YingMusic-Singer-Plus"><img src="https://img.shields.io/badge/🤗%20HuggingFace-Model-FF9D00" alt="HuggingFace Model"></a>
         <a href="https://huggingface.co/datasets/ASLP-lab/LyricEditBench"><img src="https://img.shields.io/badge/🤗%20HuggingFace-LyricEditBench-FF6F00" alt="Dataset LyricEditBench"></a>
         <a href="https://discord.gg/RXghgWyvrn"><img src="https://img.shields.io/badge/Discord-Join%20Us-5865F2?logo=discord&logoColor=white" alt="Discord"></a>
-        <a href="https://github.com/ASLP-lab/YingMusic-Singer/blob/main/assets/wechat_qr.png"><img src="https://img.shields.io/badge/WeChat-Group-07C160?logo=wechat&logoColor=white" alt="WeChat"></a>
+        <a href="https://github.com/ASLP-lab/YingMusic-Singer-Plus/blob/main/assets/wechat_qr.png"><img src="https://img.shields.io/badge/WeChat-Group-07C160?logo=wechat&logoColor=white" alt="WeChat"></a>
         <a href="http://www.npu-aslp.org/"><img src="https://img.shields.io/badge/🏫%20ASLP-Lab-4A90D9" alt="Lab"></a>
   </div>
 
@@ -456,12 +456,12 @@ HEADER_HTML = """
 DISCLAIMER_HTML = """
 <div id="disclaimer" style="text-align:center;">
   <strong>免责声明 / Disclaimer</strong><br>
-  YingMusic-Singer 可用于修改歌词后的歌声合成，支持艺术创作与娱乐应用场景。潜在风险包括未经授权的声音克隆与版权侵权问题。为确保负责任地使用，用户应在使用他人声音前取得授权、公开 AI 的参与情况，并确认音乐内容的原创性。<br>
-  <span style="opacity:0.75;">YingMusic-Singer enables the creation of singing voices with modified lyrics, supporting artistic creation and entertainment. Potential risks include unauthorized voice cloning and copyright infringement. To ensure responsible deployment, users should obtain consent for voice usage, disclose AI involvement, and verify musical originality.</span>
+  YingMusic-Singer-Plus 可用于修改歌词后的歌声合成，支持艺术创作与娱乐应用场景。潜在风险包括未经授权的声音克隆与版权侵权问题。为确保负责任地使用，用户应在使用他人声音前取得授权、公开 AI 的参与情况，并确认音乐内容的原创性。<br>
+  <span style="opacity:0.75;">YingMusic-Singer-Plus enables the creation of singing voices with modified lyrics, supporting artistic creation and entertainment. Potential risks include unauthorized voice cloning and copyright infringement. To ensure responsible deployment, users should obtain consent for voice usage, disclose AI involvement, and verify musical originality.</span>
 </div>
 
 <div style="text-align: center; margin: 3rem 0 2rem;">
-      <img src="https://raw.githubusercontent.com/ASLP-lab/YingMusic-Singer/main/assets/institutional_logo.svg" alt="Institutional Logo" style="max-width: 600px; width: 80%; display: block; margin: 0 auto;">
+      <img src="https://raw.githubusercontent.com/ASLP-lab/YingMusic-Singer-Plus/main/assets/institutional_logo.svg" alt="Institutional Logo" style="max-width: 600px; width: 80%; display: block; margin: 0 auto;">
 </div>
 """
 
