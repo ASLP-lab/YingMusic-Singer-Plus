@@ -1,7 +1,7 @@
 
 <div align="center">
 
-<h1>🎤 YingMusic-Singer: Controllable Singing Voice Synthesis with Flexible Lyric Manipulation and Annotation-free Melody Guidance</h1>
+<h1>🎤 YingMusic-Singer-Plus: Controllable Singing Voice Synthesis with Flexible Lyric Manipulation and Annotation-free Melody Guidance</h1>
 
 <img src="assets/model_logo.gif" width="61.8%">
 
@@ -14,13 +14,13 @@
 ![License](https://img.shields.io/badge/License-CC--BY--4.0-lightgrey)
 
 [![arXiv Paper](https://img.shields.io/badge/arXiv-2603.24589-b31b1b?logo=arxiv&logoColor=white)](https://arxiv.org/abs/2603.24589)
-[![GitHub](https://img.shields.io/badge/GitHub-YingMusic--Singer-181717?logo=github&logoColor=white)](https://github.com/ASLP-lab/YingMusic-Singer)
-[![Demo Page](https://img.shields.io/badge/GitHub-Demo--Page-8A2BE2?logo=github&logoColor=white&labelColor=181717)](https://aslp-lab.github.io/YingMusic-Singer-Demo/)
-[![HuggingFace Space](https://img.shields.io/badge/🤗%20HuggingFace-Space-FFD21E)](https://huggingface.co/spaces/ASLP-lab/YingMusic-Singer)
-[![HuggingFace Model](https://img.shields.io/badge/🤗%20HuggingFace-Model-FF9D00)](https://huggingface.co/ASLP-lab/YingMusic-Singer)
+[![GitHub](https://img.shields.io/badge/GitHub-YingMusic--Singer-181717?logo=github&logoColor=white)](https://github.com/ASLP-lab/YingMusic-Singer-Plus)
+[![Demo Page](https://img.shields.io/badge/GitHub-Demo--Page-8A2BE2?logo=github&logoColor=white&labelColor=181717)](https://aslp-lab.github.io/YingMusic-Singer-Plus-Demo/)
+[![HuggingFace Space](https://img.shields.io/badge/🤗%20HuggingFace-Space-FFD21E)](https://huggingface.co/spaces/ASLP-lab/YingMusic-Singer-Plus)
+[![HuggingFace Model](https://img.shields.io/badge/🤗%20HuggingFace-Model-FF9D00)](https://huggingface.co/ASLP-lab/YingMusic-Singer-Plus)
 [![Dataset LyricEditBench](https://img.shields.io/badge/🤗%20HuggingFace-LyricEditBench-FF6F00)](https://huggingface.co/datasets/ASLP-lab/LyricEditBench)
 [![Discord](https://img.shields.io/badge/Discord-Join%20Us-5865F2?logo=discord&logoColor=white)](https://discord.gg/RXghgWyvrn)
-[![WeChat](https://img.shields.io/badge/WeChat-Group-07C160?logo=wechat&logoColor=white)](https://github.com/ASLP-lab/YingMusic-Singer/blob/main/assets/wechat_qr.png)
+[![WeChat](https://img.shields.io/badge/WeChat-Group-07C160?logo=wechat&logoColor=white)](https://github.com/ASLP-lab/YingMusic-Singer-Plus/blob/main/assets/wechat_qr.png)
 [![Lab](https://img.shields.io/badge/🏫%20ASLP-Lab-4A90D9)](http://www.npu-aslp.org/)
 
 <p>
@@ -43,16 +43,16 @@
 </div>
 
 <div align="center">
-<img src="./assets/YingMusic-Singer.drawio.svg" alt="YingMusic-Singer Architecture" width="90%">
-<p><i>Overall architecture of YingMusic-Singer. Left: SFT training pipeline. Right: GRPO training pipeline.</i></p>
+<img src="./assets/YingMusic-Singer.drawio.svg" alt="YingMusic-Singer-Plus Architecture" width="90%">
+<p><i>Overall architecture of YingMusic-Singer-Plus. Left: SFT training pipeline. Right: GRPO training pipeline.</i></p>
 </div>
 
 
 ## 📖 Introduction
 
-**YingMusic-Singer** is a fully diffusion-based singing voice synthesis model that enables **melody-controllable singing voice editing with flexible lyric manipulation**, requiring no manual alignment or precise phoneme annotation.
+**YingMusic-Singer-Plus** is a fully diffusion-based singing voice synthesis model that enables **melody-controllable singing voice editing with flexible lyric manipulation**, requiring no manual alignment or precise phoneme annotation.
 
-Given only three inputs — an optional timbre reference, a melody-providing singing clip, and modified lyrics — YingMusic-Singer synthesizes high-fidelity singing voices at **44.1 kHz** while faithfully preserving the original melody.
+Given only three inputs — an optional timbre reference, a melody-providing singing clip, and modified lyrics — YingMusic-Singer-Plus synthesizes high-fidelity singing voices at **44.1 kHz** while faithfully preserving the original melody.
 
 
 ## ✨ Key Features
@@ -78,8 +78,8 @@ uv pip install -r requirements.txt
 uv pip install -r requirements.txt -i https://mirrors.ustc.edu.cn/pypi/simple
 
 # Alternatively, conda is also supported:
-conda create -n YingMusic-Singer python=3.10
-conda activate YingMusic-Singer
+conda create -n YingMusic-Singer-Plus python=3.10
+conda activate YingMusic-Singer-Plus
 pip install uv
 uv pip install -r requirements.txt
 
@@ -92,7 +92,7 @@ uv pip install -r requirements.txt -i https://mirrors.ustc.edu.cn/pypi/simple
 
 1. Download and install **Miniconda** from https://repo.anaconda.com/miniconda/ for your platform. Verify with `conda --version`.
 2. Download the pre-built environment package for your setup from the table below.
-3. Navigate to your Conda `envs/` directory and create a folder named `YingMusic-Singer`.
+3. Navigate to your Conda `envs/` directory and create a folder named `YingMusic-Singer-Plus`.
 4. Move the downloaded package into that folder and extract it:
 ```bash
    tar -xvf <package_name>
@@ -119,14 +119,14 @@ uv pip install -r requirements.txt -i https://mirrors.ustc.edu.cn/pypi/simple
 Build the image:
 
 ```bash
-docker build -t yingmusic-singer .
+docker build -t YingMusic-Singer-Plus .
 ```
 
 ## 🎵 Inference
 
 ### Option 1: Online Demo (HuggingFace Space)
 
-Visit https://huggingface.co/spaces/ASLP-lab/YingMusic-Singer to try the model instantly in your browser.
+Visit https://huggingface.co/spaces/ASLP-lab/YingMusic-Singer-Plus to try the model instantly in your browser.
 
 ### Option 2: Local Gradio App (same as online demo)
 
@@ -188,7 +188,7 @@ Multi-process inference on **LyricEditBench (melody control)** — the test set 
 python inference_mp.py \
     --input_type lyric_edit_bench_melody_control \
     --output_dir path/to/LyricEditBench_melody_control \
-    --ckpt_path ASLP-lab/YingMusic-Singer \
+    --ckpt_path ASLP-lab/YingMusic-Singer-Plus \
     --num_gpus 8
 ```
 
@@ -198,13 +198,13 @@ Multi-process inference on **LyricEditBench (singing edit)**:
 python inference_mp.py \
     --input_type lyric_edit_bench_sing_edit \
     --output_dir path/to/LyricEditBench_sing_edit \
-    --ckpt_path ASLP-lab/YingMusic-Singer \
+    --ckpt_path ASLP-lab/YingMusic-Singer-Plus \
     --num_gpus 8
 ```
 
 ## 🏗️ Model Architecture
 
-YingMusic-Singer consists of four core components:
+YingMusic-Singer-Plus consists of four core components:
 
 | Component | Description |
 |-----------|-------------|
@@ -249,14 +249,14 @@ The VAE model weights and inference code (in `src/YingMusic-Singer/utils/stable-
 
 ## Star History
 
-<a href="https://www.star-history.com/?repos=ASLP-lab%2FYingMusic-Singer&type=date&legend=top-left">
+<a href="https://www.star-history.com/?repos=ASLP-lab%2FYingMusic-Singer-Plus&type=date&legend=top-left">
  <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/image?repos=ASLP-lab/YingMusic-Singer&type=date&theme=dark&legend=top-left" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/image?repos=ASLP-lab/YingMusic-Singer&type=date&legend=top-left" />
-   <img alt="Star History Chart" src="https://api.star-history.com/image?repos=ASLP-lab/YingMusic-Singer&type=date&legend=top-left" />
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/image?repos=ASLP-lab/YingMusic-Singer-Plus&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/image?repos=ASLP-lab/YingMusic-Singer-Plus&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/image?repos=ASLP-lab/YingMusic-Singer-Plus&type=date&legend=top-left" />
  </picture>
 </a>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/ASLP-lab/YingMusic-Singer/main/assets/institutional_logo.svg" alt="Institutional Logo" width="600">
+  <img src="https://raw.githubusercontent.com/ASLP-lab/YingMusic-Singer-Plus/main/assets/institutional_logo.svg" alt="Institutional Logo" width="600">
 </p>
