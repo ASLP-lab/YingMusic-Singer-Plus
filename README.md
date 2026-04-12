@@ -44,7 +44,7 @@
 
 ## 🎥 Demo Video
 
-Click the badge below to jump to watch the demo video:
+YingMusic-Singer-Plus Demo, narration voiceover provided by [VoiceSculptor](https://github.com/ASLP-lab/VoiceSculptor). Click the badge below to jump to watch the demo video:
 
 | YouTube | Bilibili |
 |---------|----------|
