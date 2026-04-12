@@ -42,17 +42,25 @@
 
 </div>
 
-<div align="center">
-<img src="./assets/YingMusic-Singer.drawio.svg" alt="YingMusic-Singer-Plus Architecture" width="90%">
-<p><i>Overall architecture of YingMusic-Singer-Plus. Left: SFT training pipeline. Right: GRPO training pipeline.</i></p>
-</div>
+## 🎥 Demo Video
 
+Click the badge below to jump to watch the demo video:
+
+| YouTube | Bilibili |
+|---------|----------|
+| [![YouTube](assets/YingMusic-Singer-Plus.png)](https://www.youtube.com/watch?v=ktjJFS5R3Dk) | [![Bilibili](assets/YingMusic-Singer-Plus.png)](https://www.bilibili.com/video/BV1zPDSBhEkz/) |
 
 ## 📖 Introduction
 
 **YingMusic-Singer-Plus** is a fully diffusion-based singing voice synthesis model that enables **melody-controllable singing voice editing with flexible lyric manipulation**, requiring no manual alignment or precise phoneme annotation.
 
 Given only three inputs — an optional timbre reference, a melody-providing singing clip, and modified lyrics — YingMusic-Singer-Plus synthesizes high-fidelity singing voices at **44.1 kHz** while faithfully preserving the original melody.
+
+
+<div align="center">
+<img src="./assets/YingMusic-Singer.drawio.svg" alt="YingMusic-Singer-Plus Architecture" width="90%">
+<p><i>Overall architecture of YingMusic-Singer-Plus. Left: SFT training pipeline. Right: GRPO training pipeline.</i></p>
+</div>
 
 
 ## ✨ Key Features
